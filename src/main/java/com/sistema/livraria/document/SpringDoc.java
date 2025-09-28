@@ -27,7 +27,8 @@ public class SpringDoc {
                                         .type(SecurityScheme.Type.HTTP) // Define o tipo como HTTP
                                         .scheme("bearer") // Utiliza o esquema Bearer Token
                                         .bearerFormat("JWT"))) // Formato do token JWT
-                // http://localhost:8087/livaria/swagger-ui/swagger-ui/index.html
+                // http://localhost:8087/livraria/swagger-ui/swagger-ui/index.html#/
+                // http://localhost:8087/livraria/v3/api-docs -> caminhos dos endpoints
                 .info(new Info()
                         .title("API de Livraria") // Título da API
                         .description("A API de Livraria oferece funcionalidades para gerenciar livros, autores, editoras e resumos, permitindo operações como cadastro, consulta, atualização e remoção de livros. A API facilita a busca por ISBN e a interação com dados da livraria de forma eficiente e organizada.") // Descrição da API

@@ -1,0 +1,65 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:17
+    container_name: postgres-livraria
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: livraria
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Postgre
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: always
+
+  api-livraria:
+    build: .
+    image: api-livraria
+    container_name: api-livraria
+    depends_on:
+      - postgres
+    ports:
+      - "8087:8087"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/livraria
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: Postgre
+      SERVER_PORT: 8087
+      SERVER_SERVLET_CONTEXT_PATH: /livraria
+      SERVER_ERROR_INCLUDE_STACKTRACE: always
+      SERVER_ERROR_INCLUDE_MESSAGE: always
+
+      # Springdoc
+      SPRINGDOC_API_DOCS_PATH: /v3/api-docs
+      SPRINGDOC_SWAGGER_UI_PATH: /swagger-ui/index.html
+
+      # Flyway
+      SPRING_FLYWAY_ENABLED: "true"
+      SPRING_FLYWAY_BASELINE_ON_MIGRATE: "true"
+      SPRING_FLYWAY_CHECK_LOCATION: "true"
+      SPRING_FLYWAY_LOCATIONS: classpath:db/migration
+
+      # JPA
+      SPRING_JPA_OPEN_IN_VIEW: "false"
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.PostgreSQLDialect
+      SPRING_JPA_PROPERTIES_HIBERNATE_SHOW_SQL: "true"
+      SPRING_JPA_PROPERTIES_HIBERNATE_FORMAT_SQL: "true"
+      SPRING_JPA_PROPERTIES_HIBERNATE_JDBC_LOB_NON_CONTEXTUAL_CREATION: "true"
+
+      # Logging
+      LOGGING_LEVEL_PLATAFORMA_EAD: TRACE
+      LOGGING_LEVEL_ROOT: INFO
+      LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_WEB: DEBUG
+      LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY: DEBUG
+      LOGGING_LEVEL_ORG_HIBERNATE: INFO
+
+      # JWT
+      AUTORIZACAO_JWTSECRET: KtMyJNrMuVqahZMIQRKTaSagmZz4MjwXy+3D0awL1XCe0MMhXawXgTIteLVqfXVyjCDJk4HgJf0189g8Steq509KPrBn2FlGc+6plqti0d4=
+      AUTORIZACAO_JWTEXPIRATIONMS: 14400000
+    restart: always
+
+volumes:
+  pgdata:
