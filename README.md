@@ -44,26 +44,6 @@ sistema-livraria/
 - ✅ Cache de consultas frequentes com **Redis**  
 - ✅ Tratamento de exceções a nível global  
 
----
-
-# 🔑 Endpoints Principais
-
-## Autenticação
-- `POST /auth/login` → Gera token JWT  
-- `POST /auth/register` → Cria um novo usuário  
-
-## Livros
-- `GET /livros` → Lista paginada de livros  
-- `GET /livros/{id}` → Busca livro por ID  
-- `POST /livros` → Cadastra novo livro  
-- `PUT /livros/{id}` → Atualiza dados de um livro  
-- `DELETE /livros/{id}` → Exclui livro  
-
-## Relatórios
-- `GET /relatorios/livros/autor` → Relatório em PDF por autor  
-- `GET /relatorios/livros/editora` → Relatório em PDF por editora  
-- `GET /relatorios/livros/valor` → Relatório em PDF por valor  
-
 
 # 📖 Documentação da API
 
