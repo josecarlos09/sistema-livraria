@@ -1,0 +1,625 @@
+{
+	"info": {
+		"_postman_id": "acf2372a-e9bf-4f66-b9dd-c913cb4254e2",
+		"name": "LIVRARIA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39714074"
+	},
+	"item": [
+		{
+			"name": "USUARIO",
+			"item": [
+				{
+					"name": "POST USUARIO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8087/sistema-vendas-usuario/usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"sistema-vendas-usuario",
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL USUARIO",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "GET ONE USUARIO",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE USUARIO",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8087/sistema-vendas-usuario/usuario/ee2d72d4-fa6d-4063-a0a9-ccb65ba318a4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"sistema-vendas-usuario",
+								"usuario",
+								"ee2d72d4-fa6d-4063-a0a9-ccb65ba318a4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "USUARIO PUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Marcos Souza\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8087/clinica_hospitalar/usuario/ec1d179c-d857-4cc2-afcf-3e7382462364/usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"clinica_hospitalar",
+								"usuario",
+								"ec1d179c-d857-4cc2-afcf-3e7382462364",
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT SENHA",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8087/clinica_hospitalar/usuario/de4a21be-2509-4f08-888f-85932a393454/usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"clinica_hospitalar",
+								"usuario",
+								"de4a21be-2509-4f08-888f-85932a393454",
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT STATUS",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"statusUsuario\":\"INATIVO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8087/clinica_hospitalar/usuario/de4a21be-2509-4f08-888f-85932a393454/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"clinica_hospitalar",
+								"usuario",
+								"de4a21be-2509-4f08-888f-85932a393454",
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LOGIN",
+			"item": [
+				{
+					"name": "POST LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Carlos\",\r\n    \"senha\":\"@Carlos123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8087/usuario/autenticacao/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"usuario",
+								"autenticacao",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LIVROS",
+			"item": [
+				{
+					"name": "GET ALL LIVROS",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "GET ONE LIVROS",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "POST LIVROS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"titulo\": \"A Cruz de Cristo\",\r\n  \"valor\": 49.9,\r\n  \"quantidade\": 10,\r\n  \"categoria\": \"EVANGELISMO\",\r\n  \"tipoCapa\": \"DURA\",\r\n  \"formato\": \"FISICO\",\r\n  \"status\": \"DISPONIVEL\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8087/livraria/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"livraria",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT LIVROS",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"titulo\": \"A Cruz de Cristo\",\r\n  \"valor\": 59.90,\r\n  \"quantidade\": 12,\r\n  \"status\": \"DISPONIVEL\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8087/livraria/livros/0982c48e-7893-437d-ba75-4a861db949b2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"livraria",
+								"livros",
+								"0982c48e-7893-437d-ba75-4a861db949b2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE LIVROS",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8087/livraria/livros/0982c48e-7893-437d-ba75-4a861db949b2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"livraria",
+								"livros",
+								"0982c48e-7893-437d-ba75-4a861db949b2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ISBN",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "POST LIVRO ISBN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"isbn\":\"1234567890\",\r\n  \"valor\": 59.9,\r\n  \"quantidade\": 10,\r\n  \"categoria\":\"EVANGELIO\",\r\n  \"tipoCapa\":\"DURA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8087/livraria/livros/consulta/9788595084742",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"livraria",
+								"livros",
+								"consulta",
+								"9788595084742"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH STATUS LIVRO",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"DISPONIVEL\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8087/livraria/livros/status/0b115d69-8816-4ff2-86fd-d89456c8765b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"livraria",
+								"livros",
+								"status",
+								"0b115d69-8816-4ff2-86fd-d89456c8765b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AUTOR",
+			"item": [
+				{
+					"name": "POST AUTOR",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Augusto Cury\",\r\n  \"codigo\": \"AUGCURY001\",\r\n  \"statusAltor\": \"ATIVO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8087/livraria/autores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"livraria",
+								"autores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET AUTOR",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "GET ONE AUTOR",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "PUT AUTOR",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"y A\",\r\n  \"codigo\": \"221131\",\r\n  \"statusAltor\": \"ATIVO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8087/livraria/autores/8cf31189-7306-46b5-949f-8595114e7350",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"livraria",
+								"autores",
+								"8cf31189-7306-46b5-949f-8595114e7350"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE AUTOR",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8087/livraria/autores/8cf31189-7306-46b5-949f-8595114e7350",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"livraria",
+								"autores",
+								"8cf31189-7306-46b5-949f-8595114e7350"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EDITORA",
+			"item": [
+				{
+					"name": "POST EDITORA",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"y aqsq\",\r\n  \"codigo\": \"22131\",\r\n  \"statusEditora\": \"ATIVO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8087/livraria/editoras",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"livraria",
+								"editoras"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL EDITORA",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE EDITORA",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8087/livraria/editoras",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"livraria",
+								"editoras"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ONE EDITORA",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "PUT EDITORA",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"y qsq\",\r\n  \"codigo\": \"201131\",\r\n  \"statusEditora\": \"ATIVO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8087/livraria/editoras/87192873-cf4b-4fee-961c-fcaddfb1ad3b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"livraria",
+								"editoras",
+								"87192873-cf4b-4fee-961c-fcaddfb1ad3b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RELATORIOS",
+			"item": [
+				{
+					"name": "GET CATEGORIA",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "GET AUTOR",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "GET VALOR",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "GET GENERICO",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "GET EDITORA",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "GET STATUS",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,71 @@
+server:
+  port: 8087  # Define a porta na qual a aplicação será executada
+  servlet:
+    context-path: '/livraria/'  # Define o caminho base da aplicação, que será usado para todas as rotas
+  error:  # Configurações para tratamento de erros
+    include-stacktrace: always  # Sempre inclui a stack trace (rastreamento de pilha) nos detalhes do erro na resposta da API.
+    include-message: always     # Sempre inclui a mensagem do erro na resposta da API.
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs  # Especifica o caminho onde a documentação em formato JSON será exposta
+  swagger-ui:
+    path: /swagger-ui/index.html  # Define o caminho para acessar a interface do Swagger UI, útil para visualizar a API de forma interativa
+
+# Configuração da conexão com o banco de dados PostgreSQL
+spring:
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    check-location: true
+    validate-on-migrate: false
+    ignore-missing-migrations: false
+    locations: classpath:db/migration
+    url: jdbc:postgresql://localhost:5433/livraria
+    user: postgres
+    password: Postgre
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/livraria # URL de conexão com o banco de dados PostgreSQL, incluindo o nome do banco de dados
+    username: postgres  # Nome de usuário para autenticação no banco de dados
+    password: Postgre  # Senha para autenticação no banco de dados
+    driver-class-name: org.postgresql.Driver  # Define o driver JDBC para PostgreSQL, necessário para a conexão
+    hikari:
+      maximum-pool-size: 10  # Define o tamanho máximo do pool de conexões, permitindo controlar a quantidade de conexões simultâneas
+
+  jpa:  # Configurações do JPA (Java Persistence API)
+    open-in-view: false  # Desativa a estratégia Open-in-View para evitar problemas de Lazy Loading e melhorar a performance
+    hibernate:  # Configurações específicas do Hibernate, o provedor de JPA
+      ddl-auto: update  # Define a estratégia de atualização automática do esquema do banco de dados. "update" ajusta a estrutura automaticamente.
+      dialect: org.hibernate.dialect.PostgreSQLDialect  # Define o dialeto específico para PostgreSQL, adaptando o Hibernate ao banco de dados
+      jdbc:
+        lob.non-contextual-creation: true  # Evita problemas de criação de objetos LOB (Large Objects) no banco de dados PostgreSQL
+
+    properties:  # Propriedades adicionais do JPA
+      hibernate:
+        show_sql: true  # Exibe no console os comandos SQL gerados pelo Hibernate para depuração
+        format_sql: true  # Formata os comandos SQL para facilitar a leitura no console
+
+  # Exibição de logs coloridos no console
+  output:
+    ansi:
+      enabled: Always  # Habilita a exibição de logs com cores no console para melhor visualização
+    SQL: debug  # Define o nível de log do SQL como debug, exibindo as consultas SQL geradas pela aplicação
+    type:
+      descriptor:
+        sql:
+          BasicBinder: trace  # Exibe os parâmetros que são inseridos nas consultas SQL para melhor rastreamento
+
+# Configuração de logs da aplicação
+logging:
+  level:
+    plataforma_ead: TRACE  # Define o nível de log TRACE para a plataforma EAD, capturando detalhes de execução
+    root: INFO  # Define o nível de log padrão como INFO, que é usado para todos os logs não específicos
+    org.springframework.web: DEBUG  # Ativa logs detalhados para requisições web feitas pelo Spring
+    org.springframework.security: DEBUG  # Ativa logs detalhados para a segurança do Spring
+    org.hibernate: INFO  # Define logs do Hibernate no nível INFO para visualizar as operações realizadas no banco
+
+# Configuração de autorização via JWT (JSON Web Token)
+autorizacao:
+  jwtSecret: KtMyJNrMuVqahZMIQRKTaSagmZz4MjwXy+3D0awL1XCe0MMhXawXgTIteLVqfXVyjCDJk4HgJf0189g8Steq509KPrBn2FlGc+6plqti0d4=  # Chave secreta usada para assinar e verificar o token JWT. Deve ser mantida em segredo
+  jwtExpirationMs: 14400000  # Define o tempo de expiração do token JWT em milissegundos (4 horas)
