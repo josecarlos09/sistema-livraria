@@ -44,7 +44,7 @@ sistema-livraria/
 - ✅ Cache de consultas frequentes com **Redis**  
 - ✅ Tratamento de exceções a nível global  
 
-# 👥 Perfis de Usuário
+#👥 Perfis de Usuário
 
 - **ADMIN** → Acesso total ao sistema  
 - **USER** → Acesso restrito a consultas  
