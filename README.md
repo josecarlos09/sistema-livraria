@@ -1,9 +1,3 @@
-# 📚 Sistema de Livraria
-
-Um sistema completo de gerenciamento de livraria, desenvolvido em **Java 21** com **Spring Boot 3.3.5**, seguindo boas práticas de arquitetura e organização de código.  
-O sistema permite o cadastro, consulta, atualização e exclusão de livros, autores, editoras e usuários, além de integrações externas e geração de relatórios.
-
-
 ## 🚀 Tecnologias Utilizadas
 
 - **Java 21**
