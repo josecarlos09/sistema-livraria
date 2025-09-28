@@ -32,7 +32,7 @@ sistema-livraria/
 │   ├── application.yml # Configurações da aplicação
 │── pom.xml
 
-#Funcionalidades
+# Funcionalidades
 
 - ✅ Cadastro, atualização, exclusão e listagem de livros  
 - ✅ Controle de autores e editoras  
