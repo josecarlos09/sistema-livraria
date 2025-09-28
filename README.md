@@ -44,14 +44,6 @@ sistema-livraria/
 - ✅ Cache de consultas frequentes com **Redis**  
 - ✅ Tratamento de exceções a nível global  
 
-
-# 📖 Documentação da API
-
-Após rodar a aplicação, acesse:  
-
-👉 [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
-
-
 # 👥 Perfis de Usuário
 
 - **ADMIN** → Acesso total ao sistema  
