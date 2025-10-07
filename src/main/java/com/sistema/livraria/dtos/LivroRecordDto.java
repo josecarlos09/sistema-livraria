@@ -52,6 +52,7 @@ public record LivroRecordDto(
         @NotNull(groups = LivroView.PathStatus.class, message = "O campo status é obrigatório.")
         @JsonView(LivroView.PathStatus.class)
         StatusLivro status){
+
     public interface LivroView {
         interface Cadastro {}
         interface PutLivro {}
